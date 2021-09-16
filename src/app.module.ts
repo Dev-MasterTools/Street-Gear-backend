@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { MongooseModule } from '@nestjs/mongoose';
+import { ProductsModule } from './components/products/products.module';
 
 @Module({
-  imports: [],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [MongooseModule.forRoot("mongodb+srv://admin:1234@cluster0.ilbdz.mongodb.net/streetGearDB?retryWrites=true&w=majority", { autoCreate: true }),
+           ProductsModule],
+           
 })
 export class AppModule {}
