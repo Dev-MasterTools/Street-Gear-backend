@@ -21,4 +21,9 @@ export class ProductsService
 			throw new BadRequestException(error);
 		}
 	}
+
+	async getAllProducts(){
+		return (await this.__productmodel.find().exec()).map((product: any) => ({ id: product.id, name: product.name, image: product.image, price: product.price, category: product.category,reviews: product.reviews,status: product.status }));
+
+	}
 }

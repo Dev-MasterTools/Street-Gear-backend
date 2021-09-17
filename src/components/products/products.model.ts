@@ -18,5 +18,4 @@ export interface Product extends mongoose.Document
     category: string;
     reviews: string;
     status: string;
-
 }
